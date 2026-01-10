@@ -12,9 +12,22 @@
         .btn-download { background-color: var(--main-gold); color: white; font-weight: bold; padding: 12px 30px; border-radius: 50px; text-decoration: none; transition: 0.3s; }
         .btn-download:hover { background-color: #b8860b; color: white; transform: scale(1.05); }
         .card { border: none; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: -30px; margin-bottom: 30px; }
-        .screenshot-img { width: 100%; border-radius: 10px; border: 2px solid #ddd; transition: 0.3s; cursor: pointer; }
-        .screenshot-img:hover { transform: scale(1.03); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        
+        /* Updated Image Styling for larger view */
+        .screenshot-container { margin-top: 40px; }
+        .screenshot-img { 
+            width: 100%; 
+            max-width: 900px; /* Limits size on ultra-wide screens */
+            border-radius: 12px; 
+            border: 3px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin-bottom: 30px;
+            transition: 0.3s;
+        }
+        .screenshot-img:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.25); }
+        
         .footer { margin-top: 50px; padding: 20px; text-align: center; color: #666; font-size: 0.9em; }
+        .feature-list { font-size: 1.1rem; line-height: 2; }
     </style>
 </head>
 <body>
@@ -27,44 +40,53 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <div class="card p-4 text-center">
-                    <h2 class="mb-4">Download App</h2>
-                    <p>Select your preferred version below. The app includes advanced features like True/Mean node persistence and multiple chart formats.</p>
+                <div class="card p-5">
+                    <div class="text-center">
+                        <h2 class="mb-4">Download App</h2>
+                        <p class="mb-4">Select your preferred version below. The app includes advanced features like True/Mean node persistence and multiple chart formats.</p>
+                        
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mb-5">
+                            <a href="https://drive.google.com/drive/folders/1F_3iHjOz_OZ9oy89uYlL-p6fDUJR928-?usp=sharing" target="_blank" class="btn btn-download btn-lg">
+                                Download .EXE (Windows)
+                            </a>
+                            <a href="YOUR_DRIVE_LINK_FOR_PYTHON" target="_blank" class="btn btn-outline-dark btn-lg px-4 rounded-pill">
+                                Download Source (Python)
+                            </a>
+                        </div>
+                    </div>
+
+                    <hr class="my-5">
                     
-                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center mt-3">
-                        <a href="https://drive.google.com/drive/folders/1F_3iHjOz_OZ9oy89uYlL-p6fDUJR928-?usp=sharing" target="_blank" class="btn btn-download">
-                            Download .EXE (Windows)
-                        </a>
-                        <a href="YOUR_DRIVE_LINK_FOR_PYTHON" target="_blank" class="btn btn-outline-dark px-4 py-2 rounded-pill">
-                            Download Source (Python)
-                        </a>
+                    <div class="row">
+                        <div class="col-12 text-center mb-5">
+                            <h3>Key Features</h3>
+                            <div class="d-inline-block text-start feature-list">
+                                <div>✅ <strong>Panchanga:</strong> Tithi, Vara, Nakshatra, Yoga, Karana</div>
+                                <div>✅ <strong>Node Selection:</strong> Toggle between True and Mean Rahu</div>
+                                <div>✅ <strong>Multiple Charts:</strong> North, South, and East Indian formats</div>
+                                <div>✅ <strong>Outer Planets:</strong> Support for Uranus, Neptune, and Pluto</div>
+                            </div>
+                        </div>
                     </div>
 
                     <hr class="my-4">
-                    
-                    <div class="row">
-                        <div class="col-md-6 text-start">
-                            <h3>Key Features</h3>
-                            <ul class="list-unstyled">
-                                <li>✅ <strong>Panchanga:</strong> Tithi, Vara, Nakshatra, Yoga, Karana</li>
-                                <li>✅ <strong>Node Selection:</strong> Toggle between True and Mean Rahu</li>
-                                <li>✅ <strong>Multiple Charts:</strong> North, South, and East Indian</li>
-                                <li>✅ <strong>Outer Planets:</strong> Uranus, Neptune, and Pluto</li>
-                            </ul>
+
+                    <div class="screenshot-container text-center">
+                        <h3 class="mb-5">Software Showcase</h3>
+                        
+                        <div class="mb-5">
+                            <h5>Main Horoscope View</h5>
+                            <img src="image1.png" alt="BhabHora Main Chart" class="screenshot-img">
                         </div>
-                        <div class="col-md-6">
-                            <h3>Screenshots</h3>
-                            <div class="row g-2">
-                                <div class="col-4">
-                                    <img src="image1.png" alt="BhabHora Screenshot 1" class="screenshot-img">
-                                </div>
-                                <div class="col-4">
-                                    <img src="image2.png" alt="BhabHora Screenshot 2" class="screenshot-img">
-                                </div>
-                                <div class="col-4">
-                                    <img src="image3.png" alt="BhabHora Screenshot 3" class="screenshot-img">
-                                </div>
-                            </div>
+
+                        <div class="mb-5">
+                            <h5>Panchanga & Calculations</h5>
+                            <img src="image2.png" alt="BhabHora Panchanga" class="screenshot-img">
+                        </div>
+
+                        <div class="mb-5">
+                            <h5>Settings & Customization</h5>
+                            <img src="image3.png" alt="BhabHora Settings" class="screenshot-img">
                         </div>
                     </div>
                 </div>
@@ -73,7 +95,7 @@
     </div>
 
     <div class="footer">
-        <p>&copy; Bhabhora 1.0</p>
+        <p>&copy; Bhabhora 1.0 | Developed for Vedic Astrologers</p>
     </div>
 
 </body>
